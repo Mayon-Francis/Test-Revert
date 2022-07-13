@@ -44,7 +44,10 @@ describe("RevertTest", function () {
   describe("Revert 5 Custom Error", function () {
     it("Should revert with reason \"CustomError\"", async function () {
       await expect(contract.revert5())
-      .to.be.revertedWith("MY_CUSTOM_ERROR")
+      .to.be.revertedWithCustomError(
+        contract,
+        "MY_CUSTOM_ERROR"
+      );
     });
   });
 
